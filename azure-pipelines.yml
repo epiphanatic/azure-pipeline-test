@@ -19,3 +19,18 @@ steps:
     npm ci
     npm run build
   displayName: 'npm install and build'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  inputs: 
+    Contents: |
+      .nuxt/**
+      static/**
+      package.json
+      nuxt.config.js.
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
