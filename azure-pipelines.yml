@@ -1,5 +1,4 @@
-# Node.js with Vue
-# Build a Node.js project that uses Vue.
+
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
@@ -35,8 +34,8 @@ steps:
 - task: ArchiveFiles@2
   inputs:
     #rootFolderOrFile: '$(Build.BinariesDirectory)' 
-    includeRootFolder: true 
-    # Options: zip, 7z, tar, wim
+    # includeRootFolder: true 
+    # Options for archiveType: zip, 7z, tar, wim
     archiveType: 'zip' 
     #tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
