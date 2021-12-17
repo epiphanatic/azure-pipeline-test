@@ -28,6 +28,7 @@ steps:
       static/**
       package.json
       nuxt.config.js.
+      server.js
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 # Archive files
@@ -36,8 +37,6 @@ steps:
   inputs:
     #rootFolderOrFile: '$(Build.BinariesDirectory)' 
     # includeRootFolder: true 
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-    includeRootFolder: false
     # Options for archiveType: zip, 7z, tar, wim
     archiveType: 'zip' 
     #tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
